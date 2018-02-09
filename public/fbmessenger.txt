@@ -1,0 +1,119 @@
+
+REQUEST_METHOD: GET
+----- Request Date: 02.02.2018 17:42:22 IP: 127.0.0.1 -----
+
+hub_mode => subscribe (GET)
+hub_challenge => 959750865 (GET)
+hub_verify_token => efkegkmekgfmks3434354325jidgsksdg (GET)
+
+REQUEST_METHOD: GET
+----- Request Date: 02.02.2018 17:42:28 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 02.02.2018 17:55:41 IP: 127.0.0.1 -----
+
+hub_mode => subscribe (GET)
+hub_challenge => 2123738238 (GET)
+hub_verify_token => efkegkmekgfmks3434354325jidgsksdg (GET)
+
+REQUEST_METHOD: GET
+----- Request Date: 02.02.2018 19:38:43 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 02.02.2018 20:33:49 IP: 127.0.0.1 -----
+
+hub_mode => subscribe (GET)
+hub_challenge => 1534392005 (GET)
+hub_verify_token => efkegkmekgfmks3434354325jidgsksdg (GET)
+
+REQUEST_METHOD: GET
+----- Request Date: 07.02.2018 15:19:44 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 07.02.2018 15:19:48 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 07.02.2018 15:34:42 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 07.02.2018 15:53:59 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 07.02.2018 16:13:18 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 08.02.2018 14:23:25 IP: 127.0.0.1 -----
+
+hub_mode => subscribe (GET)
+hub_challenge => 1988188809 (GET)
+hub_verify_token => efkegkmekgfmks3434354325jidgsksdg (GET)
+
+REQUEST_METHOD: GET
+----- Request Date: 08.02.2018 14:23:37 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 08.02.2018 20:23:44 IP: 127.0.0.1 -----
+
+hub_mode => subscribe (GET)
+hub_challenge => 1283910569 (GET)
+hub_verify_token => efkegkmekgfmks3434354325jidgsksdg (GET)
+
+REQUEST_METHOD: GET
+----- Request Date: 08.02.2018 20:24:15 IP: 127.0.0.1 -----
+
+hub_mode => subscribe (GET)
+hub_challenge => 1665913419 (GET)
+hub_verify_token => efkegkmekgfmks3434354325jidgsksdg (GET)
+
+REQUEST_METHOD: GET
+----- Request Date: 08.02.2018 20:24:38 IP: 127.0.0.1 -----
+
+hub_mode => subscribe (GET)
+hub_challenge => 951978097 (GET)
+hub_verify_token => efkegkmekgfmks3434354325jidgsksdg (GET)
+
+REQUEST_METHOD: GET
+----- Request Date: 08.02.2018 20:25:01 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 08.02.2018 20:25:05 IP: 127.0.0.1 -----
+
+hub_mode => subscribe (GET)
+hub_challenge => 1707369305 (GET)
+hub_verify_token => efkegkmekgfmks3434354325jidgsksdg (GET)
+
+REQUEST_METHOD: GET
+----- Request Date: 08.02.2018 20:55:24 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 08.02.2018 20:59:41 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 09.02.2018 15:30:00 IP: 127.0.0.1 -----
+
+hub_mode => subscribe (GET)
+hub_challenge => 2045222077 (GET)
+hub_verify_token => efkegkmekgfmks3434354325jidgsksdg (GET)
+
+REQUEST_METHOD: GET
+----- Request Date: 09.02.2018 15:30:04 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 09.02.2018 15:39:39 IP: 127.0.0.1 -----
+
+
+REQUEST_METHOD: GET
+----- Request Date: 09.02.2018 15:41:01 IP: 127.0.0.1 -----
+
