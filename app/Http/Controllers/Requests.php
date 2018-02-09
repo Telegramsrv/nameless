@@ -1,8 +1,10 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 use GuzzleHttp;
 use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7\Request;
+
+
 
 class Requests extends Controller
 {
@@ -44,18 +46,47 @@ class Requests extends Controller
         $textmessage = $bot->sendMessage($message);
 
     }
-/*$tokken = $_REQUEST['hub_verify_token'];
-        $hubVerifyToken = env('WEBHOOK_VERIFY_TOKEN');
-        $challange = $_REQUEST['hub_challenge'];
-        $accessToken = env('FACEBOOK_APP_TOKEN');
-        $bot = new FbBot();
-        $bot->setHubVerifyToken($hubVerifyToken);
-        $bot->setaccessToken($accessToken);
-        echo $bot->verifyTokken($tokken,$challange);
 
-        $input = json_decode(file_get_contents('php://input'), true);
-        $message = $bot->readMessage($input);
-        $textmessage = $bot->sendMessage($message);*/
+    public function bot(Request $request){
+        $data = $request->all();
+
+        $id = $data["entry"][0]["messaging"][0]["sender"]["id"];
+        $senderMessage = $data["entry"][0]["messaging"][0]["message"];
+        if(!empty($senderMessage)){
+            $this->sendTextMessage($id, "Hi buddy");
+        }
+    }
+
+    private function sendTextMessage($recipientId, $messageText){
+        $messageData = [
+            "recipient" => [
+                "id" => $recipientId,
+            ],
+            "message" => [
+                "text" => $messageText,
+            ],
+        ];
+        $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token=' .env('FACEBOOK_APP_TOKEN'));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ["ContentType : application/json"]);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, GuzzleHttp\json_encode($messageData));
+        curl_exec($ch);
+        curl_close($ch);
+    }
+
+
+    /*$tokken = $_REQUEST['hub_verify_token'];
+            $hubVerifyToken = env('WEBHOOK_VERIFY_TOKEN');
+            $challange = $_REQUEST['hub_challenge'];
+            $accessToken = env('FACEBOOK_APP_TOKEN');
+            $bot = new FbBot();
+            $bot->setHubVerifyToken($hubVerifyToken);
+            $bot->setaccessToken($accessToken);
+            echo $bot->verifyTokken($tokken,$challange);
+
+            $input = json_decode(file_get_contents('php://input'), true);
+            $message = $bot->readMessage($input);
+            $textmessage = $bot->sendMessage($message);*/
 
 }
 
