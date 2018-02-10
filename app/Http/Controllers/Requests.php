@@ -69,7 +69,8 @@ class Requests extends Controller
         catch (Exception $ex){
             echo 'Fail to verify token';
         }
-        $data = $_REQUEST->all();
+        //$data = $_REQUEST->all();
+        $data = $_REQUEST;
         dd($data);
         $id = $data["entry"][0]["messaging"][0]["sender"]["id"];
         $senderMessage = $data["entry"][0]["messaging"][0]["message"];
