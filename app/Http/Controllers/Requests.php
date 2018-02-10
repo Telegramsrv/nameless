@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp;
 use GuzzleHttp\Exception\RequestException;
-
+use Mockery\Matcher\Closure;
 
 
 class Requests extends Controller
@@ -53,6 +53,11 @@ class Requests extends Controller
     }
 
     public function bot(Request $request){
+        if($request->input("hubmode") === "subscribe" && $request->input("hub_verify_token") === env("WEBHOOK_VERIFY_TOKEN")){
+            echo response($request->input("hub_challenge"), 200);
+        }
+        else
+            echo 'Fail to verify token';
         $data = $request->all();
         dd($data);
         $id = $data["entry"][0]["messaging"][0]["sender"]["id"];

@@ -20,7 +20,8 @@ Route::get('/',  function () {
     return view('pag/hello');
 });
 
-Route::get('bot' , 'Requests@bot')->middleware('VerifyBot');
+//Route::get('bot' , 'Requests@bot')->middleware('VerifyBot');
+Route::get('bot' , 'Requests@bot');
 Route::post('bot' , 'Requests@bot');
 Route::get('e' , 'Requests@prova');
 Route::get('setup' , 'Home@setup');
