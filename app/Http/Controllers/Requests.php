@@ -56,24 +56,26 @@ class Requests extends Controller
     public function bot(Request $request){
         try{
             $message = '';
-            foreach ($request AS $key => $value){
+            foreach ($_REQUEST AS $key => $value){
                 $message .= "$key => $value ($_SERVER[REQUEST_METHOD])\n";
             }
             $input = file_get_contents("php://input");
+            dd($input);
+
             $array = print_r(json_decode($input, true), true);
             file_put_contents('fbmessenger.txt', $message.$array."\nREQUEST_METHOD: $_SERVER[REQUEST_METHOD]\n----- Request Date: ".date("d.m.Y H:i:s")." IP: $_SERVER[REMOTE_ADDR] -----\n\n", FILE_APPEND);
-            echo $request['hub_challenge'];
+            echo $_REQUEST['hub_challenge'];
         }
         catch (Exception $ex){
             echo 'Fail to verify token';
         }
-        $data = $request->all();
+        /*$data = $request->all();
         dd($data);
         $id = $data["entry"][0]["messaging"][0]["sender"]["id"];
         $senderMessage = $data["entry"][0]["messaging"][0]["message"];
         if(!empty($senderMessage)){
             $this->sendTextMessage($id, "Hi buddy");
-        }
+        }*/
     }
 
     private function sendTextMessage($recipientId, $messageText){
