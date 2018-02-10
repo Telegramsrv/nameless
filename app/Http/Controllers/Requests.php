@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp;
 use GuzzleHttp\Exception\RequestException;
+use Mockery\Exception;
 use Mockery\Matcher\Closure;
 
 
@@ -53,11 +54,19 @@ class Requests extends Controller
     }
 
     public function bot(Request $request){
-        if($request->input("hubmode") === "subscribe" && $request->input("hub_verify_token") === env("WEBHOOK_VERIFY_TOKEN")){
-            echo response($request->input("hub_challenge"), 200);
+        try{
+            $message = '';
+            foreach ($request AS $key => $value){
+                $message .= "$key => $value ($_SERVER[REQUEST_METHOD])\n";
+            }
+            $input = file_get_contents("php://input");
+            $array = print_r(json_decode($input, true), true);
+            file_put_contents('fbmessenger.txt', $message.$array."\nREQUEST_METHOD: $_SERVER[REQUEST_METHOD]\n----- Request Date: ".date("d.m.Y H:i:s")." IP: $_SERVER[REMOTE_ADDR] -----\n\n", FILE_APPEND);
+            echo $request['hub_challenge'];
         }
-        else
+        catch (Exception $ex){
             echo 'Fail to verify token';
+        }
         $data = $request->all();
         dd($data);
         $id = $data["entry"][0]["messaging"][0]["sender"]["id"];
