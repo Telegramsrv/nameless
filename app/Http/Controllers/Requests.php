@@ -54,7 +54,6 @@ class Requests extends Controller
     }
 
     public function bot(Request $request){
-        dd($request);
         try{
             $message = '';
             foreach ($request AS $key => $value){
@@ -63,7 +62,7 @@ class Requests extends Controller
             $input = file_get_contents("php://input");
             $array = print_r(json_decode($input, true), true);
             file_put_contents('fbmessenger.txt', $message.$array."\nREQUEST_METHOD: $_SERVER[REQUEST_METHOD]\n----- Request Date: ".date("d.m.Y H:i:s")." IP: $_SERVER[REMOTE_ADDR] -----\n\n", FILE_APPEND);
-            print_r( $request['hub_challenge']);
+            echo $request['hub_challenge'];
         }
         catch (Exception $ex){
             echo 'Fail to verify token';
