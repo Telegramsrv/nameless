@@ -10,7 +10,7 @@
 
     <body>
         <div id="inizio" class="center">
-            <p></p>
+            <p>Masterblade</p>
         </div>
     </body>
     <footer>

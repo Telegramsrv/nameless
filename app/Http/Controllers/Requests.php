@@ -25,6 +25,11 @@ class Requests extends Controller
 }' "https://graph.facebook.com/v2.11/me/broadcast_messages?access_token=<PAGE_ACCESS_TOKEN>"
 
     }*/
+
+    public function prova(){
+        echo 'entra';
+    }
+
     public function call(){
         include 'Home.php';
         $bot = new Home();

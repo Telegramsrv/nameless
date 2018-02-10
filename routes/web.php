@@ -16,10 +16,13 @@ Route::get('wellcome', function () {
     return view('pag/wellcome');
 });
 
+Route::get('/',  function () {
+    return view('pag/hello');
+});
 
 Route::get('bot' , 'Requests@bot')->middleware('VerifyBot');
 Route::post('bot' , 'Requests@bot');
-Route::get('e' , 'Requests@calle');
+Route::get('e' , 'Requests@prova');
 Route::get('setup' , 'Home@setup');
 Route::get('input' , 'Home@input');
 Route::get('broadcast' , 'Home@broadcast_message');
