@@ -54,6 +54,7 @@ class Requests extends Controller
     }
 
     public function bot(Request $request){
+        dd($request);
         try{
             $message = '';
             foreach ($request AS $key => $value){
