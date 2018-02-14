@@ -14,6 +14,11 @@ class New_controller extends Controller
 {
     public function setup()
     {
+        //https://packagist.org/packages/casperlaitw/laravel-fb-messenger
+        //https://github.com/lexxyungcarter/laravel-5-messenger
+        //https://casperlaitw.github.io/laravel-fb-messenger/v1.4.7/Casperlaitw/LaravelFbMessenger/Events/Broadcast.html
+
+
         $client = new GuzzleHttp\Client();
 
         /*return $this->call('me/messenger_profile', [
